@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
 const cors = require('cors');
-require('dotenv').config();
+require('dotenv').config({ path: path.join(__dirname, 'env', '.env') });
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
 const app = express();
@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 3000;
 const API_KEY = process.env.GEMINI_API_KEY;
 
 if (!API_KEY) {
-  console.warn('Warning: GEMINI_API_KEY is not set. The /api/chat route will return an error until you add it to .env');
+  console.warn('Warning: GEMINI_API_KEY is not set. Ensure env/.env contains it.');
 }
 
 const genAI = new GoogleGenerativeAI(API_KEY || '');
@@ -77,7 +77,6 @@ function mapHistoryItem(item) {
   const role = item.role === 'user' ? 'user' : 'model';
   return { role, parts: [{ text: String(item.text || '') }] };
 }
-
 
 app.post('/api/chat', async (req, res) => {
   try {
