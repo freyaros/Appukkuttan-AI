@@ -52,14 +52,14 @@ Dental questions? Oh boy, prepare for the legendary lorry story.
 
 *Installation*
 ```bash
-git clone https://github.com/your-repo/appukkuttan-ai.git
-cd appukkuttan-ai
+git clone https://github.com/Aleena2425/Appukkuttan-s-AI.git
+cd Appukkuttan-s-AI
 npm install
 
 # Create .env with your Gemini API key
 # Get a key from: https://ai.google.dev/
 echo GEMINI_API_KEY=your_key_here > .env
 
-# Run the server (UI at http://localhost:3000)
+# Start the server (UI at http://localhost:3000)
 npm start
 ```
