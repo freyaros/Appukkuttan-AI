@@ -13,8 +13,6 @@
     <div id="app" class="comic-grid">
       
 
-      <!-- Center Big Window (splash/branding) -->
-      
       <!-- Right Chat Window -->
       <section class="panel panel--right">
         <div class="window window--chat">
@@ -66,6 +64,16 @@
 
       <!-- Tiny UI Chips -->
       
+    </div>
+
+    <!-- Fake Incoming Call Popup -->
+    <div id="call-popup" class="call-popup hidden" aria-hidden="true">
+      <div class="call-popup__content">
+        <img src="public/call icon.jpg" alt="Phone" class="call-popup__icon" />
+        <h2 id="caller-name" class="call-popup__name">Mahadevan Calling...</h2>
+        <div id="countdown-timer" class="call-popup__timer">10</div>
+        <button id="reject-call-button" class="btn call-popup__reject hidden">Decline</button>
+      </div>
     </div>
 
     <script src="script.js" defer></script>

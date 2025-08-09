@@ -235,6 +235,57 @@ body {
 .micro-shapes::before { left: 18px; top: 18px; transform: rotate(45deg); background: #fff; }
 .micro-shapes::after { right: 18px; bottom: 18px; border-radius: 50%; background: #fff; }
 
+/* Utility */
+.hidden { display: none !important; }
+
+/* Call popup overlay */
+.call-popup {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+}
+
+.call-popup__content {
+  background: #fffef5;
+  border: var(--stroke) solid var(--ink);
+  border-radius: 20px;
+  box-shadow: 12px 12px 0 var(--ink);
+  padding: 22px 26px;
+  width: min(420px, 92vw);
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+}
+
+.call-popup__icon {
+  width: 72px;
+  height: 72px;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.call-popup__name {
+  margin: 6px 0 4px 0;
+  font-weight: 900;
+}
+
+.call-popup__timer { font-weight: 900; font-size: 20px; }
+
+.call-popup__reject {
+  margin-top: 8px;
+  background: var(--red);
+  color: #fff;
+}
+
+@keyframes pulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
 @media (max-width: 1000px) {
   .comic-grid { grid-template-columns: 1fr; overflow: auto; height: auto; min-height: 100%; }
   .panel { min-height: 60vh; }
