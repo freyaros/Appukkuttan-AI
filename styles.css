@@ -152,8 +152,8 @@ body {
 
 /* Chat */
 .window--chat { grid-template-rows: auto 1fr auto; }
-.chat-area { padding: 14px; display: grid; grid-template-rows: 1fr auto; align-items: end; }
-.messages { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; align-content: start; }
+.chat-area { padding: 14px; display: grid; grid-template-rows: 1fr auto; align-items: end; min-height: 0; }
+.messages { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; align-content: start; overflow-y: auto; max-height: 100%; }
 .message { display: inline-flex; max-width: 85%; padding: 10px 12px; border: var(--stroke) solid var(--ink); border-radius: 14px; background: #fff; box-shadow: 4px 4px 0 var(--ink); }
 .message--bot { background: #ffeab1; }
 .message--user { justify-self: end; background: #d7f9ff; }
@@ -161,17 +161,12 @@ body {
 .composer { display: flex; gap: 8px; padding: 10px; border-top: var(--stroke) solid var(--ink); background: #fff5dc; }
 .composer input { flex: 1; border: var(--stroke) solid var(--ink); border-radius: 10px; padding: 10px 12px; box-shadow: 3px 3px 0 var(--ink); font-size: 14px; }
 
-/* Background image for chat panel */
-.window--chat .window__body::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url('public/appukkuttan.jpg') center/cover no-repeat;
-  opacity: 0.18; /* decrease opacity */
-  pointer-events: none;
-  z-index: 0;
+/* Background image for chat panel - only the background is faded */
+.window--chat .window__body {
+  background:
+    linear-gradient(rgba(255,255,255,0.3), rgba(255,255,255,0.3)),
+    url('public/background.png') center/cover no-repeat;
 }
-.chat-area { position: relative; z-index: 1; }
 
 /* Loading bar */
 .loading { display: grid; gap: 8px; place-items: center; padding: 8px 0; }
