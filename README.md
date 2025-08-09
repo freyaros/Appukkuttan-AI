@@ -35,8 +35,8 @@ Dental questions? Oh boy, prepare for the legendary lorry story.
 
 *For Software:*
 - *Languages:* JavaScript, JSON, Markdown  
-- *Frameworks:* Node.js (for API), Cursor IDE for integration  
-- *Libraries:* OpenAI/Gemini API SDK, Front-end comic UI components  
+- *Frameworks:* Node.js (Express for API)  
+- *Libraries:* Google Generative AI SDK (`@google/generative-ai`), Front-end comic UI (HTML/CSS/JS)  
 - *Tools:* Cursor, GitHub, Gemini API Playground  
 
 *For Hardware:*
@@ -54,4 +54,12 @@ Dental questions? Oh boy, prepare for the legendary lorry story.
 ```bash
 git clone https://github.com/your-repo/appukkuttan-ai.git
 cd appukkuttan-ai
-npm install
+npm install
+
+# Create .env with your Gemini API key
+# Get a key from: https://ai.google.dev/
+echo GEMINI_API_KEY=your_key_here > .env
+
+# Run the server (UI at http://localhost:3000)
+npm start
+```
