@@ -1,29 +1,57 @@
-# Useless Chatbot — Comic UI
+# Appukkuttan AI
 
-Open `index.html` in your browser. No build step required.
+## Basic Details
 
-## Customize
-- Edit `styles.css` to tweak colors and layout.
-- Add or change persona replies in `script.js` inside `generateUselessReply`.
+*Team Name:* Appukkuttan's Logic
 
-## Notes
-- This is a static demo that mimics a retro comic UI with bold outlines, speech bubbles, and a loading bar. 
+*Team Members*  
+*Team Lead:* Aleena Sidhik - Christ College of Engineering  
+*Member 2:* Freya Rose - Christ College of Engineering 
 
-## Run with Gemini 2.5 Flash (recommended for speed)
-1. Create a `.env` in project root with:
-   
-   ```env
-   GEMINI_API_KEY=YOUR_KEY_HERE
-   PORT=3000
-   ```
-2. Install server deps and start:
-   
-   ```powershell
-   npm init -y
-   npm i express cors dotenv @google/generative-ai
-   npm pkg set scripts.start="node server.js"
-   npm start
-   ```
-3. Open `http://localhost:3000`.
+---
 
-The frontend calls `/api/chat`; your key remains on the server. If the server is down, the UI falls back to the local witty generator. 
+## Project Description
+An AI chatbot that channels the overconfident, sarcastic, and emotionally dramatic dentist *Appukkuttan* from the famous Malayalam movie sequels — answering serious questions with completely useless advice, movie references, and emotional flashbacks no one asked for.  
+
+---
+
+## The Problem (that doesn't exist)
+People are tired of *getting useful, logical answers* from AI chatbots.  
+Where is the confusion? Where is the emotional drama? Where is Maya??  
+
+---
+
+## The Solution (that nobody asked for)
+We built *Appukkuttan AI* — a chatbot that never solves your problem, but leaves you laughing, confused, and questioning life decisions.  
+Love questions? He’ll bring up Maya.  
+Friendship questions? Here come Mahadevan, Govindankutty, and Thomasukutty.  
+Dental questions? Oh boy, prepare for the legendary lorry story.
+
+---
+
+## Technical Details
+
+### Technologies/Components Used
+
+*For Software:*
+- *Languages:* JavaScript, JSON, Markdown  
+- *Frameworks:* Node.js (for API), Cursor IDE for integration  
+- *Libraries:* OpenAI/Gemini API SDK, Front-end comic UI components  
+- *Tools:* Cursor, GitHub, Gemini API Playground  
+
+*For Hardware:*
+- None (Only Appukkuttan’s overconfidence)  
+- Hardware requirements: 1 laptop, strong Wi-Fi, and a lot of patience  
+- Tools required: A chair (like a dentist), snacks for emotional support  
+
+---
+
+## Implementation
+
+*For Software:*
+
+*Installation*
+```bash
+git clone https://github.com/your-repo/appukkuttan-ai.git
+cd appukkuttan-ai
+npm install
