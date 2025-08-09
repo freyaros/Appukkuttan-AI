@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appukkuttan Bot — Comic UI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div id="app" class="comic-grid">
+      
+
+      <!-- Center Big Window (splash/branding) -->
+      
+      <!-- Right Chat Window -->
+      <section class="panel panel--right">
+        <div class="window window--chat">
+          <header class="window__titlebar">
+            <div class="traffic">
+              <span class="dot dot--red"></span>
+              <span class="dot dot--yellow"></span>
+              <span class="dot dot--green"></span>
+            </div>
+            <strong class="window__title">Chat</strong>
+            <div class="titlebar-actions">
+              <label class="persona">
+                <span>Character</span>
+                <select id="persona">
+                  <option value="appu" selected>Appukkuttan</option>
+                </select>
+              </label>
+            </div>
+          </header>
+          <div class="window__body burst burst--blue chat-area">
+            <ul id="messages" class="messages" aria-live="polite"></ul>
+            <div id="loading" class="loading" hidden>
+              <div class="loading__bar"><span class="loading__fill"></span></div>
+              <div class="loading__label">... LOADING ...</div>
+            </div>
+          </div>
+          <footer class="composer">
+            <input id="input" type="text" placeholder="Say something pointless..." autocomplete="off" />
+            <button id="send" class="btn">Send</button>
+            <button id="love" class="btn btn--icon" title="Send love">❤</button>
+          </footer>
+        </div>
+      </section>
+      
+      <!-- Floating Sticker -->
+      <button id="sticker-like" class="sticker sticker--like" title="Like this">❤</button>
+
+      <!-- Confirmation Bubble -->
+      <div id="confirm" class="bubble" role="dialog" aria-modal="true" aria-labelledby="confirm-title" hidden>
+        <div class="bubble__content">
+          <strong id="confirm-title">Are you sure?</strong>
+          <div class="bubble__actions">
+            <button id="confirm-yes" class="btn btn--yes">Yes</button>
+            <button id="confirm-no" class="btn btn--no">No</button>
+          </div>
+        </div>
+        <div class="bubble__tail" aria-hidden="true"></div>
+      </div>
+
+      <!-- Tiny UI Chips -->
+      
+    </div>
+
+    <script src="script.js" defer></script>
+  </body>
+</html> 

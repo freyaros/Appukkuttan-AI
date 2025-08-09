@@ -1,0 +1,254 @@
+:root {
+  --ink: #121212;
+  --paper: #fff7e6;
+  --yellow: #ffd200;
+  --blue: #37b2ff;
+  --teal: #18c5b8;
+  --orange: #ff8a3d;
+  --red: #ff5252;
+  --green: #78d46b;
+  --shadow: rgba(0, 0, 0, 0.25);
+  --stroke: 4px;
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  font-family: 'Nunito', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  overflow: hidden;
+  justify-content: center;
+}
+
+.comic-grid {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr;
+  gap: 14px;
+  padding: 14px;
+  position: relative;
+  background-image:
+    linear-gradient(0deg, rgba(0,0,0,0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,0,0,0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.panel {
+  position: relative;
+  border: var(--stroke) solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: 6px 6px 0 var(--ink);
+  background: #f3f3f3;
+  overflow: hidden;
+}
+
+.panel--left { background: linear-gradient(180deg, #f5fdfd, #d9fff3); }
+.panel--center { background: linear-gradient(180deg, #fffef2, #ffe7a6); }
+.panel--right { background: linear-gradient(180deg, #ebf7ff, #cfefff); }
+
+/* Window */
+.window {
+  position: absolute;
+  inset: 14px;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  background: white;
+  border: var(--stroke) solid var(--ink);
+  border-radius: var(--radius);
+  box-shadow: 8px 8px 0 var(--ink);
+}
+
+.window--big { inset: 24px; }
+
+.window__titlebar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-bottom: var(--stroke) solid var(--ink);
+  background: #ffeac6;
+}
+
+.window__title { font-weight: 900; letter-spacing: 0.5px; }
+
+.traffic { display: flex; gap: 8px; align-items: center; }
+.dot { width: 14px; height: 14px; border: var(--stroke) solid var(--ink); border-radius: 50%; display: inline-block; box-shadow: 2px 2px 0 var(--ink) inset; }
+.dot--red { background: var(--red); }
+.dot--yellow { background: var(--yellow); }
+.dot--green { background: var(--green); }
+
+.window__close {
+  border: var(--stroke) solid var(--ink);
+  border-radius: 50%;
+  width: 28px; height: 28px;
+  background: #fff;
+  font-weight: 900; font-size: 16px; line-height: 24px;
+  cursor: pointer;
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.window__body {
+  position: relative;
+  overflow: hidden;
+  justify-content: center;
+
+}
+
+/* Comic bursts */
+.burst {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.burst--yellow {
+  background:
+    radial-gradient(circle at center, rgba(255,255,255,0.2) 0 120px, transparent 180px),
+    repeating-conic-gradient(from 0deg, rgba(0,0,0,0.04) 0 10deg, rgba(0,0,0,0.08) 10deg 20deg),
+    radial-gradient(circle at 50% 50%, #667fff 0%, #ffd200 35%, #ffb700 100%);
+}
+
+.burst--blue {
+  background:
+    radial-gradient(circle at center, rgba(255,255,255,0.3) 0 110px, transparent 170px),
+    repeating-conic-gradient(from 0deg, rgba(0,0,0,0.04) 0 10deg, rgba(0,0,0,0.08) 10deg 20deg),
+    radial-gradient(circle at 50% 50%, #77d3ff 0%, #37b2ff 35%, #1a94e6 100%);
+}
+
+.brand {
+  font-family: 'Bangers', cursive;
+  font-size: 56px;
+  letter-spacing: 1px;
+  text-shadow: 4px 4px 0 var(--ink);
+  color: var(--ink);
+  margin: 0 0 8px;
+}
+
+.tagline { font-weight: 800; margin: 0 0 18px; }
+
+.cta-row { display: flex; gap: 10px; }
+
+/* Buttons */
+.btn {
+  appearance: none;
+  border: var(--stroke) solid var(--ink);
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: #fff;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.btn:hover { transform: translate(-1px, -1px); }
+.btn:active { transform: translate(1px, 1px); box-shadow: 2px 2px 0 var(--ink); }
+.btn--warning { background: var(--orange); }
+.btn--icon { width: 44px; height: 44px; border-radius: 50%; font-size: 20px; }
+
+/* Chat */
+.window--chat { grid-template-rows: auto 1fr auto; }
+.chat-area { padding: 14px; display: grid; grid-template-rows: 1fr auto; align-items: end; }
+.messages { list-style: none; margin: 0; padding: 0; display: grid; gap: 12px; align-content: start; }
+.message { display: inline-flex; max-width: 85%; padding: 10px 12px; border: var(--stroke) solid var(--ink); border-radius: 14px; background: #fff; box-shadow: 4px 4px 0 var(--ink); }
+.message--bot { background: #ffeab1; }
+.message--user { justify-self: end; background: #d7f9ff; }
+
+.composer { display: flex; gap: 8px; padding: 10px; border-top: var(--stroke) solid var(--ink); background: #fff5dc; }
+.composer input { flex: 1; border: var(--stroke) solid var(--ink); border-radius: 10px; padding: 10px 12px; box-shadow: 3px 3px 0 var(--ink); font-size: 14px; }
+
+/* Background image for chat panel */
+.window--chat .window__body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('public/appukkuttan.jpg') center/cover no-repeat;
+  opacity: 0.18; /* decrease opacity */
+  pointer-events: none;
+  z-index: 0;
+}
+.chat-area { position: relative; z-index: 1; }
+
+/* Loading bar */
+.loading { display: grid; gap: 8px; place-items: center; padding: 8px 0; }
+.loading__bar { width: 100%; height: 20px; border: var(--stroke) solid var(--ink); border-radius: 12px; background: #fff; box-shadow: 3px 3px 0 var(--ink); overflow: hidden; }
+.loading__fill { display: block; height: 100%; width: 0%; background: linear-gradient(90deg, var(--green), var(--yellow)); border-right: var(--stroke) solid var(--ink); transition: width 1.2s ease; }
+.loading__label { font-weight: 900; letter-spacing: 1px; }
+
+/* Persona label */
+.titlebar-actions { display: flex; align-items: center; gap: 10px; }
+.persona { display: inline-flex; align-items: center; gap: 6px; font-weight: 900; }
+.persona select { border: var(--stroke) solid var(--ink); border-radius: 8px; padding: 4px 6px; background: #fff; box-shadow: 2px 2px 0 var(--ink); }
+
+/* Speech bubble */
+.bubble {
+  position: absolute;
+  right: 28%;
+  top: 18%;
+  transform: translateY(-8px);
+  display: grid;
+  place-items: center;
+  z-index: 20;
+}
+.bubble__content { background: #fff; border: var(--stroke) solid var(--ink); border-radius: 16px; box-shadow: 6px 6px 0 var(--ink); padding: 12px 14px; }
+.bubble__actions { display: flex; gap: 8px; margin-top: 8px; }
+.btn--yes { background: var(--green); }
+.btn--no { background: var(--red); color: #fff; }
+.bubble__tail { width: 0; height: 0; border-left: 14px solid transparent; border-right: 14px solid transparent; border-top: 18px solid #fff; filter: drop-shadow(0 0 0 var(--ink)); transform: translateY(-2px); }
+.bubble[hidden] { display: none; }
+
+/* Stickers + Chips */
+.sticker {
+  position: absolute;
+  right: 22px; bottom: 22px;
+  border: var(--stroke) solid var(--ink);
+  background: #fff0f3;
+  color: var(--red);
+  border-radius: 50%; width: 56px; height: 56px;
+  font-size: 22px; font-weight: 900;
+  box-shadow: 6px 6px 0 var(--ink);
+  cursor: pointer;
+}
+.sticker--like.active { background: #ffcad4; transform: rotate(-12deg) translateY(-2px); }
+
+.chip {
+  position: absolute;
+  left: 50%; bottom: 10px;
+  transform: translateX(-50%);
+  border: var(--stroke) solid var(--ink);
+  background: #fff;
+  padding: 6px 12px;
+  border-radius: 22px;
+  font-weight: 900;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+/* Micro decoration */
+.micro-shapes::before,
+.micro-shapes::after {
+  content: "";
+  position: absolute;
+  width: 16px; height: 16px;
+  border: var(--stroke) solid var(--ink);
+  border-radius: 2px;
+  box-shadow: 4px 4px 0 var(--ink);
+}
+.micro-shapes::before { left: 18px; top: 18px; transform: rotate(45deg); background: #fff; }
+.micro-shapes::after { right: 18px; bottom: 18px; border-radius: 50%; background: #fff; }
+
+@media (max-width: 1000px) {
+  .comic-grid { grid-template-columns: 1fr; overflow: auto; height: auto; min-height: 100%; }
+  .panel { min-height: 60vh; }
+  .window { position: relative; inset: 10px; }
+  .bubble { right: 18px; top: 12px; }
+}
+
+/* Place chat (right panel) in the center column on desktop */
+@media (min-width: 1001px) {
+  .panel--right { grid-column: 2; }
+  .panel--center { grid-column: 3; }
+} 
