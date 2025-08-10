@@ -1,6 +1,8 @@
 const path = require('path');
 const express = require('express');
 const cors = require('cors');
+// Load .env at project root first, then optionally env/.env
+require('dotenv').config();
 require('dotenv').config({ path: path.join(__dirname, 'env', '.env') });
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 
@@ -12,7 +14,7 @@ const PORT = process.env.PORT || 3000;
 const API_KEY = process.env.GEMINI_API_KEY;
 
 if (!API_KEY) {
-  console.warn('Warning: GEMINI_API_KEY is not set. Ensure env/.env contains it.');
+  console.warn('Warning: GEMINI_API_KEY is not set. Add it to .env (project root) or env/.env.');
 }
 
 const genAI = new GoogleGenerativeAI(API_KEY || '');
